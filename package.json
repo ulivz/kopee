@@ -1,5 +1,5 @@
 {
-  "name": "@nomadland/copy",
+  "name": "@nomadland/cp",
   "version": "0.1.0",
   "description": "A high-level interface for succinct files coping",
   "main": "lib/index.js",
@@ -13,15 +13,10 @@
     "cov": "jest --coverage",
     "lint": "eslint src/** __tests__ --ext .js,.jsx,.ts,.tsx --fix",
     "ci": "npm run lint && npm run cov",
-    "docs:dev": "vuepress dev docs --temp docs/.temp",
-    "docs:build": "vuepress build docs --temp docs/.temp",
-    "docs:release": "npm run docs:build && sh deploy.sh",
-    "build": "npm run docs:build",
-    "code:build": "rm -rf lib && tsc",
-    "code:dev": "npm run code:build -- --watch",
-    "dev": "npm run code:dev",
+    "build": "rm -rf lib && tsc",
+    "dev": "npm run code:build -- --watch",
     "release": "publish",
-    "prepublishOnly": "npm run code:build"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "url": "git@github.com:ulivz/copy.git",
@@ -52,8 +47,7 @@
     "eslint-config-sherry": "0.0.1",
     "jest-cli": "^24.8.0",
     "ts-jest": "^25.2.1",
-    "typescript": "^4.4.4",
-    "vuepress": "^1.5.2"
+    "typescript": "^4.4.4"
   },
   "publishConfig": {
     "access": "public"
