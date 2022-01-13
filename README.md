@@ -40,136 +40,131 @@ npm i @nomadland/cp --save
 
 ### `cp()`
 
-- __Type__: `(opts: ICopyOptions) => Promise<ICopyStream>`
+- **Type**: `(opts: ICopyOptions) => Promise<ICopyStream>`
 
 Source code of types：
 
-- [ICopyOptions](https://github.com/ulivz/copyblob/master/src/interface.ts#L83)。 
-- [ICopyStream](https://github.com/ulivz/copyblob/master/src/index.ts#L32)。 
+- [ICopyOptions](https://github.com/ulivz/copy/blob/master/src/interface.ts#L83)。
+- [ICopyStream](https://github.com/ulivz/copy/blob/master/src/index.ts#L32)。
 
 ## Usage
 
 ```bash
-const cp = require('@nomadland/cp')
+const { cp } = require('@nomadland/cp')
 ```
 
 ### Copy all files
 
 ```js
 cp({
-  src: '/path/to/source/dir',
-  dist: '/path/to/output/dir',
-})
+  src: "/path/to/source/dir",
+  dist: "/path/to/output/dir",
+});
 ```
 
 which is equivalent to:
 
 ```js
 cp({
-  src: '/path/to/source/dir',
-  dist: '/path/to/output/dir',
-  files: [
-    '**'
-  ]
-})
+  src: "/path/to/source/dir",
+  dist: "/path/to/output/dir",
+  files: ["**"],
+});
 ```
 
-and: 
+and:
 
 ```js
 cp({
-  src: '/path/to/source/dir',
-  dist: '/path/to/output/dir',
+  src: "/path/to/source/dir",
+  dist: "/path/to/output/dir",
   files: {
-    '**': true
-  }
-})
+    "**": true,
+  },
+});
 ```
 
 ### Copy partial files
 
 ```js
 cp({
-  src: '/path/to/source/dir',
-  dist: '/path/to/output/dir',
-  files: [
-    'package.json'
-  ]
-})
+  src: "/path/to/source/dir",
+  dist: "/path/to/output/dir",
+  files: ["package.json"],
+});
 ```
 
 glob patterns is also supported:
 
 ```js
 cp({
-  src: '/path/to/source/dir',
-  dist: '/path/to/output/dir',
+  src: "/path/to/source/dir",
+  dist: "/path/to/output/dir",
   files: [
-    '**/*.ts' // Only copy all *.js files.
-  ]
-})
+    "**/*.ts", // Only copy all *.js files.
+  ],
+});
 ```
 
 ### Override files
 
 ```js
 cp({
-  src: '/path/to/source/dir',
-  dist: '/path/to/output/dir',
+  src: "/path/to/source/dir",
+  dist: "/path/to/output/dir",
   files: {
-    '**': true,
-    'package.json': {
-      override: '{ "name": "@nomadland/cp" }'
-    }
-  }
-})
+    "**": true,
+    "package.json": {
+      override: '{ "name": "@nomadland/cp" }',
+    },
+  },
+});
 ```
 
 which is equivalent to:
 
 ```js
 cp({
-  src: '/path/to/source/dir',
-  dist: '/path/to/output/dir',
+  src: "/path/to/source/dir",
+  dist: "/path/to/output/dir",
   files: {
-    '**': true,
+    "**": true,
     // package.json will be replaced with new content.
-    'package.json': '{ "name": "@nomadland/cp" }'
-  }
-})
+    "package.json": '{ "name": "@nomadland/cp" }',
+  },
+});
 ```
 
 overriding function is also supported:
 
 ```js
 cp({
-  src: '/path/to/source/dir',
-  dist: '/path/to/output/dir',
+  src: "/path/to/source/dir",
+  dist: "/path/to/output/dir",
   files: {
-    '**': true,
-    'package.json': {
+    "**": true,
+    "package.json": {
       override: (filename, content) => {
         // return new content
-      }
-    }
-  }
-})
+      },
+    },
+  },
+});
 ```
 
 which is equivalent to:
 
-
 ```js
 cp({
-  src: '/path/to/source/dir',
-  dist: '/path/to/output/dir',
+  src: "/path/to/source/dir",
+  dist: "/path/to/output/dir",
   files: {
-    '**': true,
-    'package.json':  (filename, content) => {
+    "**": true,
+    "package.json": (filename, content) => {
       // return new content
-    }
-  }
-})
+    },
+  },
+});
 ```
 
 Note that if the source files don't exists, the overriding result will be used as the default content.
@@ -178,95 +173,95 @@ You can enable the `disableOverride` flag to disable the overriding behaviors bu
 
 ```js
 cp({
-  src: '/path/to/source/dir',
-  dist: '/path/to/output/dir',
+  src: "/path/to/source/dir",
+  dist: "/path/to/output/dir",
   disableOverride: true,
   files: {
-    '**': true,
+    "**": true,
     // This content will be used as the default content when "package.json" doesn't exist.
-    'package.json': '{}'
-  }
-})
+    "package.json": "{}",
+  },
+});
 ```
 
 ### Transform files.
 
 ```js
 cp({
-  src: '/path/to/source/dir',
-  dist: '/path/to/output/dir',
+  src: "/path/to/source/dir",
+  dist: "/path/to/output/dir",
   files: {
-    '**': true,
+    "**": true,
     // Add banner in the front of all *.ts files.
-    '**/*.ts': { transform: content => `${BANNER}\n${content}` }
-  }
-})
+    "**/*.ts": { transform: (content) => `${BANNER}\n${content}` },
+  },
+});
 ```
 
 ### Rename files
 
 ```js
 cp({
-  src: '/path/to/source/dir',
-  dist: '/path/to/output/dir',
+  src: "/path/to/source/dir",
+  dist: "/path/to/output/dir",
   files: {
-   '**': true,
-   'package.json': { rename: 'config.json' }
-  }
-})
+    "**": true,
+    "package.json": { rename: "config.json" },
+  },
+});
 ```
 
 renaming function is also supported:
 
 ```js
 cp({
-  src: '/path/to/source/dir',
-  dist: '/path/to/output/dir',
+  src: "/path/to/source/dir",
+  dist: "/path/to/output/dir",
   files: {
-   '**': {
-     rename: filename => `lib/${filename}`,
-   }
-  }
-})
+    "**": {
+      rename: (filename) => `lib/${filename}`,
+    },
+  },
+});
 ```
 
 ### Rename & transform files
 
 ```js
 cp({
-  src: '/path/to/source/dir',
-  dist: '/path/to/output/dir',
+  src: "/path/to/source/dir",
+  dist: "/path/to/output/dir",
   files: {
-   '**': true,
-   'package.json': { 
-     rename: 'package.json',
-     transform: content => `${BANNER}\n${content}`,
-    }
-  }
-})
+    "**": true,
+    "package.json": {
+      rename: "package.json",
+      transform: (content) => `${BANNER}\n${content}`,
+    },
+  },
+});
 ```
 
 ### Do not write to disk
 
 ```js
 cp({
-  src: '/path/to/source/dir',
-  dist: '/path/to/output/dir',
+  src: "/path/to/source/dir",
+  dist: "/path/to/output/dir",
   write: false,
-})
+});
 ```
 
 ### Write to symtem tmp
 
 ```js
-import { TEMP } from '@nomadland/cp'
+import { TEMP } from "@nomadland/cp";
 
 const stream = await cp({
-  src: '/path/to/source/dir',
+  src: "/path/to/source/dir",
   dist: TEMP,
   write: false,
-  debug: true
-})
+  debug: true,
+});
 
 // Get temp path with stream.destBaseDir.
 ```
