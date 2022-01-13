@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`transform with rename option multple files 1`] = `
+Object {
+  "package.json": "{
+  \\"name\\": \\"copy\\"
+}
+",
+  "src/bin.js": "/* Banner*/
+export function bin() {
+
+}
+",
+  "src/index.js": "/* Banner*/
+import { bin } from './bin';
+
+export default bin;
+",
+}
+`;
+
+exports[`transform with rename option single file 1`] = `
+Object {
+  "package.json": "{
+  \\"name\\": \\"copy\\"
+}
+",
+  "src/bin.ts": "export function bin() {
+
+}
+",
+  "src/index2.ts": "/* Banner*/
+import { bin } from './bin';
+
+export default bin;
+",
+}
+`;
