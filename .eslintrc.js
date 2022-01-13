@@ -1,8 +1,5 @@
 module.exports = {
-  extends: [
-    "@nomadland/eslint-config-pia-developer/ts",
-    "plugin:prettier/recommended",
-  ],
+  extends: ["@speedy-js/eslint-config/ts", "plugin:prettier/recommended"],
   rules: {
     "import/export": "off",
     "arrow-body-style": "off",

@@ -43,8 +43,8 @@
     "node": ">=10"
   },
   "devDependencies": {
-    "@nomadland/eslint-config-pia-developer": "^0.1.0",
-    "@nomadland/publish": "^0.2.1",
+    "@speedy-js/eslint-config": "^0.1.3",
+    "@speedy-js/publish": "^0.1.3",
     "@types/fs-extra": "9.0.13",
     "@types/jest": "^25.1.3",
     "@vuepress/plugin-medium-zoom": "^1.3.1",
