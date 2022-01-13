@@ -48,13 +48,13 @@ Source code of types：
 ## Usage
 
 ```bash
-const copy = require('@nomadland/cp')
+const cp = require('@nomadland/cp')
 ```
 
 ### Copy all files
 
 ```js
-copy({
+cp({
   src: '/path/to/source/dir',
   dist: '/path/to/output/dir',
 })
@@ -63,7 +63,7 @@ copy({
 which is equivalent to:
 
 ```js
-copy({
+cp({
   src: '/path/to/source/dir',
   dist: '/path/to/output/dir',
   files: [
@@ -75,7 +75,7 @@ copy({
 and: 
 
 ```js
-copy({
+cp({
   src: '/path/to/source/dir',
   dist: '/path/to/output/dir',
   files: {
@@ -87,7 +87,7 @@ copy({
 ### Copy partial files
 
 ```js
-copy({
+cp({
   src: '/path/to/source/dir',
   dist: '/path/to/output/dir',
   files: [
@@ -99,7 +99,7 @@ copy({
 glob patterns is also supported:
 
 ```js
-copy({
+cp({
   src: '/path/to/source/dir',
   dist: '/path/to/output/dir',
   files: [
@@ -111,7 +111,7 @@ copy({
 ### Override files
 
 ```js
-copy({
+cp({
   src: '/path/to/source/dir',
   dist: '/path/to/output/dir',
   files: {
@@ -126,7 +126,7 @@ copy({
 which is equivalent to:
 
 ```js
-copy({
+cp({
   src: '/path/to/source/dir',
   dist: '/path/to/output/dir',
   files: {
@@ -140,7 +140,7 @@ copy({
 overriding function is also supported:
 
 ```js
-copy({
+cp({
   src: '/path/to/source/dir',
   dist: '/path/to/output/dir',
   files: {
@@ -158,7 +158,7 @@ which is equivalent to:
 
 
 ```js
-copy({
+cp({
   src: '/path/to/source/dir',
   dist: '/path/to/output/dir',
   files: {
@@ -175,7 +175,7 @@ Note that if the source files don't exists, the overriding result will be used a
 You can enable the `disableOverride` flag to disable the overriding behaviors but only keep the behavior of using as default content.
 
 ```js
-copy({
+cp({
   src: '/path/to/source/dir',
   dist: '/path/to/output/dir',
   disableOverride: true,
@@ -190,7 +190,7 @@ copy({
 ### Transform files.
 
 ```js
-copy({
+cp({
   src: '/path/to/source/dir',
   dist: '/path/to/output/dir',
   files: {
@@ -204,7 +204,7 @@ copy({
 ### Rename files
 
 ```js
-copy({
+cp({
   src: '/path/to/source/dir',
   dist: '/path/to/output/dir',
   files: {
@@ -217,7 +217,7 @@ copy({
 renaming function is also supported:
 
 ```js
-copy({
+cp({
   src: '/path/to/source/dir',
   dist: '/path/to/output/dir',
   files: {
@@ -231,7 +231,7 @@ copy({
 ### Rename & transform files
 
 ```js
-copy({
+cp({
   src: '/path/to/source/dir',
   dist: '/path/to/output/dir',
   files: {
@@ -247,7 +247,7 @@ copy({
 ### Do not write to disk
 
 ```js
-copy({
+cp({
   src: '/path/to/source/dir',
   dist: '/path/to/output/dir',
   write: false,
@@ -259,7 +259,7 @@ copy({
 ```js
 import { TEMP } from '@nomadland/temp'
 
-const stream = await copy({
+const stream = await cp({
   src: '/path/to/source/dir',
   dist: TEMP,
   write: false,
