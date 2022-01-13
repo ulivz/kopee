@@ -4,19 +4,9 @@
 
 `@nomadland/cp` is **a high-level interface for succinct files coping**, with 100% test coverage as guarantee.
 
-## Features
-
-- Copy all or partial files.
-- Overriding files with glob patterns.
-- Default content.
-- Transform files with glob patterns.
-- Rename files with glob patterns.
-- Do not write to disk.
-- Write to symtem temporary disk.
-- Full TypeScript support.
-
 ## Table of Contents
 
+- [Features](#features)
 - [Install](#install)
 - [API](#api)
 - [Usage](#usage)
@@ -27,6 +17,18 @@
   - [Rename files](#rename-files)
   - [Rename & transform files](#rename--transform-files)
   - [Do not write to disk](#do-not-write-to-disk)
+- [Contributing](#contributing)
+
+## Features
+
+- Copy all or partial files.
+- Overriding files with glob patterns.
+- Default content.
+- Transform files with glob patterns.
+- Rename files with glob patterns.
+- Do not write to disk.
+- Write to symtem temporary disk.
+- Full TypeScript support.
 
 ## Install
 
