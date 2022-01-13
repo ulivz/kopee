@@ -46,7 +46,7 @@ export { Majo as ICopyStream };
 
 const MEDIA_FILE_REG = /^.*\.(jpg|png|webp|mov|mp4|gif|doc|pdf)$/i;
 
-export async function copy(opts: ICopyOptions): Promise<Majo> {
+export async function cp(opts: ICopyOptions): Promise<Majo> {
   const {
     src: sourceDir,
     files: fileDescriptors = ["**"],
