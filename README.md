@@ -257,7 +257,7 @@ cp({
 ### Write to symtem tmp
 
 ```js
-import { TEMP } from '@nomadland/temp'
+import { TEMP } from '@nomadland/cp'
 
 const stream = await cp({
   src: '/path/to/source/dir',
