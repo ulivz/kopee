@@ -25,7 +25,7 @@
   - [Override files](#override-files)
   - [Transform files](#transform-files)
   - [Rename files](#rename-files)
-  - [Rename & transform files](#rename-transform-files)
+  - [Rename & transform files](#rename--transform-files)
   - [Do not write to disk](#do-not-write-to-disk)
 
 ## Install
