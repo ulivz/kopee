@@ -1,22 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`copy all files default usage should be equalivant to array and object usage. 1`] = `
-Object {
-  "package.json": "{
-  \\"name\\": \\"copy\\"
-}
-",
-  "src/bin.ts": "export function bin() {
-
-}
-",
-  "src/index.ts": "import { bin } from './bin';
-
-export default bin;
-",
-}
-`;
-
 exports[`cp all files default usage should be equivalent to array and object usage. 1`] = `
 Object {
   "package.json": "{
