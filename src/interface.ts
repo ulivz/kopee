@@ -1,4 +1,9 @@
 /**
+ * @license
+ * Copyright (c) ULIVZ. All Rights Reserved.
+ */
+
+/**
  * Transform file.
  */
 export type TransformerType = (

@@ -1,6 +1,8 @@
 /**
- * Module dependencies
+ * @license
+ * Copyright (c) ULIVZ. All Rights Reserved.
  */
+
 import * as path from "path";
 import * as os from "os";
 import * as fs from "fs-extra";

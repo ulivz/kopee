@@ -1,3 +1,8 @@
+/**
+ * @license
+ * Copyright (c) ULIVZ. All Rights Reserved.
+ */
+
 import { isPlainObject } from "./utils";
 import {
   IFileDescriptor,
