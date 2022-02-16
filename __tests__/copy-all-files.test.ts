@@ -1,9 +1,9 @@
-import { copy } from '../src';
+import { cp } from '../src';
 import { src, dist } from './util';
 
-describe('copy all files', () => {
-  it('default usage should be equalivant to array and object usage.', async () => {
-    const stream1 = await copy({
+describe('cp all files', () => {
+  it('default usage should be equivalent to array and object usage.', async () => {
+    const stream1 = await cp({
       src,
       dist,
       write: false,
@@ -12,7 +12,7 @@ describe('copy all files', () => {
 
     expect(stream1.fileMap()).toMatchSnapshot();
 
-    const stream2 = await copy({
+    const stream2 = await cp({
       src,
       dist,
       write: false,
@@ -22,7 +22,7 @@ describe('copy all files', () => {
 
     expect(stream2.fileMap()).toEqual(stream1.fileMap());
 
-    const stream3 = await copy({
+    const stream3 = await cp({
       src,
       dist,
       write: false,
@@ -36,7 +36,7 @@ describe('copy all files', () => {
   });
 
   it('source dir is same to out dir', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist: src,
       debug: true,

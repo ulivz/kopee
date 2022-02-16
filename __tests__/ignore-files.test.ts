@@ -1,9 +1,9 @@
-import { copy } from '../src';
+import { cp } from '../src';
 import { src, dist } from './util';
 
 describe('ignore files', () => {
-  it('do not copy some files with explicit false - array usage', async () => {
-    const stream = await copy({
+  it('do not cp some files with explicit false - array usage', async () => {
+    const stream = await cp({
       src,
       dist,
       write: false,
@@ -17,8 +17,8 @@ describe('ignore files', () => {
     expect(stream.fileList[0]).toBe('package.json');
   });
 
-  it('do not copy some files with explicit false - object usage', async () => {
-    const stream = await copy({
+  it('do not cp some files with explicit false - object usage', async () => {
+    const stream = await cp({
       src,
       dist,
       write: false,

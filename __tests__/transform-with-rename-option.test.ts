@@ -1,11 +1,11 @@
-import { copy } from '../src';
+import { cp } from '../src';
 import { src, dist } from './util';
 
 const BANNER = '/* Banner*/';
 
 describe('transform with rename option', () => {
   it('single file', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist,
       write: false,
@@ -23,7 +23,7 @@ describe('transform with rename option', () => {
   });
 
   it('multple files', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist,
       write: false,

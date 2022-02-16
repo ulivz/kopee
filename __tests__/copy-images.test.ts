@@ -1,11 +1,11 @@
-import { copy } from '../src';
+import { cp } from '../src';
 import { useScene } from './util';
 
 const { src, dist } = useScene('images');
 
-describe('copy images', () => {
+describe('cp images', () => {
   it('should not change images after coping.', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist,
       debug: true,
@@ -15,7 +15,7 @@ describe('copy images', () => {
   });
 
   it('should not change images when `transform` option is specified.', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist,
       debug: true,

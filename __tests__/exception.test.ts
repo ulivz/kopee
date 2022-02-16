@@ -1,10 +1,10 @@
-import { copy } from '../src';
+import { cp } from '../src';
 import { src, dist } from './util';
 
 describe('exception', () => {
   it('throw when "files" is invalid.', async () => {
     try {
-      await copy({
+      await cp({
         src,
         dist,
         write: false,
@@ -17,7 +17,7 @@ describe('exception', () => {
 
   it('throw when file pattern is invalid.', async () => {
     try {
-      await copy({
+      await cp({
         src,
         dist,
         write: false,
@@ -32,7 +32,7 @@ describe('exception', () => {
 
   it('throw when file descriptors is invalid.', async () => {
     try {
-      await copy({
+      await cp({
         src,
         dist,
         write: false,

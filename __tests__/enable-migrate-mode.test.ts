@@ -2,7 +2,7 @@
  * Module dependencies
  */
 import { join } from 'path';
-import { copy } from '../src';
+import { cp } from '../src';
 import { useScene, src } from './util';
 import { fs } from 'majo';
 
@@ -22,7 +22,7 @@ describe('enableMigrateMode', () => {
   it('rename', async () => {
     const fixture = await prepareFixture('rename');
 
-    const stream = await copy({
+    const stream = await cp({
       src: fixture,
       dist: fixture,
       write: true,
@@ -58,7 +58,7 @@ describe('enableMigrateMode', () => {
   it.skip('delete files', async () => {
     const fixture = await prepareFixture('delete-files');
     
-    await copy({
+    await cp({
       src: fixture,
       dist: fixture,
       write: true,

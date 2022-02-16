@@ -1,10 +1,10 @@
-import { copy } from '../src';
+import { cp } from '../src';
 import { src, dist } from './util';
 
 describe('override option', () => {
   it('non-existed files - throw when override is not given - array usage', async () => {
     try {
-      await copy({
+      await cp({
         src,
         dist,
         write: false,
@@ -20,7 +20,7 @@ describe('override option', () => {
 
   it('non-existed files - throw when override is not given - object usage', async () => {
     try {
-      await copy({
+      await cp({
         src,
         dist,
         write: false,
@@ -35,7 +35,7 @@ describe('override option', () => {
   });
 
   it('non-existed files - local skipIfNotExists - array usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist,
       write: false,
@@ -50,7 +50,7 @@ describe('override option', () => {
   });
 
   it('non-existed files - local skipIfNotExists - object usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist,
       write: false,
@@ -67,7 +67,7 @@ describe('override option', () => {
   });
 
   it('non-existed files - global skipIfNotExists - array usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist,
       write: false,
@@ -83,7 +83,7 @@ describe('override option', () => {
   });
 
   it('non-existed files - global skipIfNotExists - object usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist,
       write: false,
@@ -99,7 +99,7 @@ describe('override option', () => {
   });
 
   it('non-existed files - with override content - array usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist,
       write: false,
@@ -114,7 +114,7 @@ describe('override option', () => {
   });
 
   it('non-existed files - with override content - object usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist,
       write: false,
@@ -131,7 +131,7 @@ describe('override option', () => {
   });
 
   it('non-existed files - shortcut of override content - array usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist: src,
       write: false,
@@ -146,7 +146,7 @@ describe('override option', () => {
   });
 
   it('non-existed files - shortcut of override content - object usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist: src,
       write: false,
@@ -161,7 +161,7 @@ describe('override option', () => {
   });
 
   it('non-existed files - override content function - array usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist: src,
       write: false,
@@ -178,7 +178,7 @@ describe('override option', () => {
   });
 
   it('non-existed files - override content function - object usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist: src,
       write: false,
@@ -195,7 +195,7 @@ describe('override option', () => {
   });
 
   it('existed files - static content - array usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist: src,
       write: false,
@@ -212,7 +212,7 @@ describe('override option', () => {
   });
 
   it('existed files - static content - object usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist: src,
       write: false,
@@ -229,7 +229,7 @@ describe('override option', () => {
   });
 
   it('existed files - shorcut of static content - array usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist: src,
       write: false,
@@ -244,7 +244,7 @@ describe('override option', () => {
   });
 
   it('existed files - shorcut of static content - object usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist: src,
       write: false,
@@ -259,7 +259,7 @@ describe('override option', () => {
   });
 
   it('existed files - override content function - array usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist: src,
       write: false,
@@ -277,7 +277,7 @@ describe('override option', () => {
   });
 
   it('existed files - override content function - object usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist: src,
       write: false,
@@ -294,7 +294,7 @@ describe('override option', () => {
   });
 
   it('existed files - override content function - disableOverride - array usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist: src,
       write: false,
@@ -312,7 +312,7 @@ describe('override option', () => {
   });
 
   it('existed files - override content function - object usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist: src,
       write: false,

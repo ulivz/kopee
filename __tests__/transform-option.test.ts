@@ -1,4 +1,4 @@
-import { copy, Majo } from '../src';
+import { cp, Majo } from '../src';
 import { src, dist } from './util';
 
 const BANNER = '/* Banner*/';
@@ -15,7 +15,7 @@ function assertStream(stream: Majo) {
 
 describe('transform option', () => {
   it('transform - add banner for all ts files - array usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist,
       write: false,
@@ -28,7 +28,7 @@ describe('transform option', () => {
   });
 
   it('transform - add banner for all ts files - object usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist,
       write: false,
@@ -41,7 +41,7 @@ describe('transform option', () => {
   });
 
   it('transform - get filename throw 2nd parameters', async () => {
-    await copy({
+    await cp({
       src,
       dist,
       write: false,

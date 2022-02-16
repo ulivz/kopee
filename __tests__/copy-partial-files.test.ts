@@ -1,9 +1,9 @@
-import { copy } from '../src';
+import { cp } from '../src';
 import { src, dist } from './util';
 
-describe('copy partial files', () => {
+describe('cp partial files', () => {
   it('array usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist,
       write: false,
@@ -17,7 +17,7 @@ describe('copy partial files', () => {
   });
 
   it('object usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist,
       write: false,

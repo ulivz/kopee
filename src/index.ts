@@ -18,7 +18,7 @@ import {
   IFilesMap,
 } from "./interface";
 
-const debug = require("debug")("copy");
+const debug = require("debug")("cp");
 
 declare module "majo" {
   interface Majo {
@@ -68,7 +68,7 @@ export async function cp(opts: ICopyOptions): Promise<Majo> {
   }
 
   if (displayLog) {
-    require("debug").enable("copy");
+    require("debug").enable("cp");
   }
 
   /**
@@ -91,7 +91,7 @@ export async function cp(opts: ICopyOptions): Promise<Majo> {
   }
 
   /**
-   * A majo middleware to handle core functions for copy.
+   * A majo middleware to handle core functions for cp.
    */
   function coreMiddleware(stream: Majo): void {
     nFileDescriptors.forEach((descriptor: INormalizedDescriptor) => {

@@ -1,9 +1,9 @@
-import { copy } from '../src';
+import { cp } from '../src';
 import { src, dist } from './util';
 
 describe('rename option', () => {
   it('rename - rename with same name - array usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist,
       write: false,
@@ -20,7 +20,7 @@ describe('rename option', () => {
   });
 
   it('rename - rename with same name - object usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist,
       write: false,
@@ -39,7 +39,7 @@ describe('rename option', () => {
   });
 
   it('rename - with glob and rename function - array usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist,
       write: false,
@@ -56,7 +56,7 @@ describe('rename option', () => {
   });
 
   it('rename - with glob and rename function - object usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist,
       write: false,
@@ -75,7 +75,7 @@ describe('rename option', () => {
   });
 
   it('rename - with file path and static name - array usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist,
       write: false,
@@ -93,7 +93,7 @@ describe('rename option', () => {
   });
 
   it('rename - with file path and static name - object usage', async () => {
-    const stream = await copy({
+    const stream = await cp({
       src,
       dist,
       write: false,
