@@ -12,8 +12,8 @@ import { normalizeFileDescriptors } from "./normalize";
 
 export * from "./interface";
 import {
-  INomalizedDescriptor,
-  INomalizedDescriptors,
+  INormalizedDescriptor,
+  INormalizedDescriptors,
   ICopyOptions,
   IFilesMap,
 } from "./interface";
@@ -74,7 +74,7 @@ export async function cp(opts: ICopyOptions): Promise<Majo> {
   /**
    * Normalize snippets
    */
-  const nFileDescriptors: INomalizedDescriptors =
+  const nFileDescriptors: INormalizedDescriptors =
     normalizeFileDescriptors(fileDescriptors);
   if (nFileDescriptors === null) {
     throw new Error(`Invalid value for "files" option: ${fileDescriptors}`);
@@ -94,7 +94,7 @@ export async function cp(opts: ICopyOptions): Promise<Majo> {
    * A majo middleware to handle core functions for copy.
    */
   function coreMiddleware(stream: Majo): void {
-    nFileDescriptors.forEach((descriptor: INomalizedDescriptor) => {
+    nFileDescriptors.forEach((descriptor: INormalizedDescriptor) => {
       const [
         pattern,
         {

@@ -6,10 +6,12 @@ export type TransformerType = (
   content: string,
   filename: string
 ) => string;
+
 /**
  * Rename file.
  */
 export type RenamerType = (originalName: string) => string;
+
 /**
  * Set default content, it will be used when the source
  * file doesn't exist.
@@ -80,7 +82,7 @@ export type IFileDescriptors = IFileDescriptorArray | IFileDescriptorMap;
 /**
  * Normalized descriptor.
  */
-export type INomalizedDescriptor = [
+export type INormalizedDescriptor = [
   string /* pattern */,
   IFileObjectDescriptor
 ];
@@ -88,7 +90,7 @@ export type INomalizedDescriptor = [
 /**
  * Normalized descriptors.
  */
-export type INomalizedDescriptors = Array<INomalizedDescriptor>;
+export type INormalizedDescriptors = Array<INormalizedDescriptor>;
 
 /**
  * User options.

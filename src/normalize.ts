@@ -5,7 +5,7 @@ import {
   IFileDescriptorMap,
   IFileDescriptors,
   IFileObjectDescriptor,
-  INomalizedDescriptors,
+  INormalizedDescriptors,
 } from "./interface";
 
 export function normalizeFileDescriptor(
@@ -27,11 +27,11 @@ export function normalizeFileDescriptor(
 }
 
 /**
- * Normalize @IFileDescriptors to @INomalizedDescriptors
+ * Normalize {@type IFileDescriptors} to {@type INormalizedDescriptors}.
  */
 export function normalizeFileDescriptors(
   descriptors: IFileDescriptors
-): INomalizedDescriptors | null {
+): INormalizedDescriptors | null {
   if (Array.isArray(descriptors)) {
     return (descriptors as IFileDescriptorArray).map((descriptor) => {
       descriptor = Array.isArray(descriptor) ? descriptor : [descriptor];
