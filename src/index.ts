@@ -95,8 +95,8 @@ export async function cp(opts: ICopyOptions): Promise<Majo> {
   /**
    * A majo middleware to handle core functions for cp.
    */
-  function coreMiddleware(stream: Majo): void {
-    nFileDescriptors.forEach((descriptor: INormalizedDescriptor) => {
+  async function coreMiddleware(stream: Majo): Promise<void> {
+    await Promise.all(nFileDescriptors.map(async (descriptor: INormalizedDescriptor) => {
       const [
         pattern,
         {
@@ -146,7 +146,7 @@ export async function cp(opts: ICopyOptions): Promise<Majo> {
       /**
        * Handle that source files exists
        */
-      targetFiles.forEach((filename: string) => {
+      await Promise.all(targetFiles.map(async (filename: string) => {
         if (MEDIA_FILE_REG.test(filename)) {
           return;
         }
@@ -171,7 +171,7 @@ export async function cp(opts: ICopyOptions): Promise<Majo> {
         }
 
         if (typeof transform === "function") {
-          fileContent = transform.call(opts, fileContent, filename);
+          fileContent = await transform.call(opts, fileContent, filename);
           debug("Transformed", normalize(filename));
           stream.writeContents(filename, fileContent as string);
         }
@@ -185,8 +185,8 @@ export async function cp(opts: ICopyOptions): Promise<Majo> {
         }
 
         debug("copied", normalize(filename));
-      });
-    });
+      }));
+    }));
   }
 
   const globalPatterns = nFileDescriptors.map((descriptor) => {

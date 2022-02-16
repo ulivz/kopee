@@ -10,7 +10,7 @@ export type TransformerType = (
   this: ICopyOptions,
   content: string,
   filename: string
-) => string;
+) => string | Promise<string>;
 
 /**
  * Rename file.

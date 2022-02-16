@@ -27,6 +27,22 @@ describe('transform option', () => {
     assertStream(stream);
   });
 
+  it('transform - asynchronous transformer', async () => {
+    const stream = await cp({
+      src,
+      dist,
+      write: false,
+      files: [
+        '**',
+        ['**/*.ts', { transform: async content => {
+          await new Promise(resolve => setTimeout(resolve, 100));
+          return `${BANNER}\n${content}`
+        } }],
+      ],
+    });
+    assertStream(stream);
+  });
+
   it('transform - add banner for all ts files - object usage', async () => {
     const stream = await cp({
       src,
