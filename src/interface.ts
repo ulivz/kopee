@@ -24,7 +24,7 @@ export type RenamerType = (originalName: string) => string;
 export type OverrideFnType = (filename: string, content?: string) => string;
 
 /**
- * A inteface to describe file action.
+ * A interface to describe file action.
  */
 export interface IFileObjectDescriptor {
   /**
