@@ -1,3 +1,13 @@
+# [0.2.0](https://github.com/ulivz/copy/compare/v0.1.3...v0.2.0) (2022-02-20)
+
+
+### Features
+
+* `rename` should be executed after `transform` ([eaaa76c](https://github.com/ulivz/copy/commit/eaaa76c468ef6e2ef17cbb07ec71ed65fbfad499))
+* support transformer context and `context.emitFile` api ([3da5e9a](https://github.com/ulivz/copy/commit/3da5e9a276e87038deff6bd81c8e9e628de0aa10))
+
+
+
 ## [0.1.3](https://github.com/ulivz/copy/compare/v0.1.2...v0.1.3) (2022-02-16)
 
 
