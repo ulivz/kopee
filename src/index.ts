@@ -105,7 +105,7 @@ export async function cp(opts: ICopyOptions): Promise<Majo> {
         stream.createFile(file, createMajoFileSync(absFilePath, content));
       },
     };
-    
+
     await Promise.all(
       nFileDescriptors.map(async (descriptor: INormalizedDescriptor) => {
         const [
@@ -164,6 +164,17 @@ export async function cp(opts: ICopyOptions): Promise<Majo> {
             }
             let fileContent = stream.fileContents(filename);
 
+            if (typeof transform === "function") {
+              fileContent = await transform.call(
+                context,
+                fileContent,
+                filename,
+                context
+              );
+              debug("Transformed", normalize(filename));
+              stream.writeContents(filename, fileContent as string);
+            }
+
             if (rename) {
               const outputFilename =
                 typeof rename === "function"
@@ -180,17 +191,6 @@ export async function cp(opts: ICopyOptions): Promise<Majo> {
                 stream.rename(filename, outputFilename);
                 filename = outputFilename;
               }
-            }
-
-            if (typeof transform === "function") {
-              fileContent = await transform.call(
-                context,
-                fileContent,
-                filename,
-                context
-              );
-              debug("Transformed", normalize(filename));
-              stream.writeContents(filename, fileContent as string);
             }
 
             if (overrideGetter && !disableOverride) {
