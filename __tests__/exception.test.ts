@@ -1,7 +1,7 @@
-import { cp } from '../src';
-import { src, dist } from './util';
+import { cp } from "../src";
+import { src, dist } from "./util";
 
-describe('exception', () => {
+describe("exception", () => {
   it('throw when "files" is invalid.', async () => {
     try {
       await cp({
@@ -15,33 +15,29 @@ describe('exception', () => {
     }
   });
 
-  it('throw when file pattern is invalid.', async () => {
+  it("throw when file pattern is invalid.", async () => {
     try {
       await cp({
         src,
         dist,
         write: false,
-        files: [
-          null,
-        ],
+        files: [null],
       });
     } catch (e) {
-      expect(e.message).toBe('Invalid file pattern: null');
+      expect(e.message).toBe("Invalid file pattern: null");
     }
   });
 
-  it('throw when file descriptors is invalid.', async () => {
+  it("throw when file descriptors is invalid.", async () => {
     try {
       await cp({
         src,
         dist,
         write: false,
-        files: [
-          ['**', null],
-        ],
+        files: [["**", null]],
       });
     } catch (e) {
-      expect(e.message).toBe('Invalid file descriptor: null');
+      expect(e.message).toBe("Invalid file descriptor: null");
     }
   });
 });

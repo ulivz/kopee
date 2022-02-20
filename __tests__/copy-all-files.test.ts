@@ -1,8 +1,8 @@
-import { cp } from '../src';
-import { src, dist } from './util';
+import { cp } from "../src";
+import { src, dist } from "./util";
 
-describe('cp all files', () => {
-  it('default usage should be equivalent to array and object usage.', async () => {
+describe("cp all files", () => {
+  it("default usage should be equivalent to array and object usage.", async () => {
     const stream1 = await cp({
       src,
       dist,
@@ -17,7 +17,7 @@ describe('cp all files', () => {
       dist,
       write: false,
       debug: true,
-      files: ['**'],
+      files: ["**"],
     });
 
     expect(stream2.fileMap()).toEqual(stream1.fileMap());
@@ -28,14 +28,14 @@ describe('cp all files', () => {
       write: false,
       debug: true,
       files: {
-        '**': true,
+        "**": true,
       },
     });
 
     expect(stream3.fileMap()).toEqual(stream1.fileMap());
   });
 
-  it('source dir is same to out dir', async () => {
+  it("source dir is same to out dir", async () => {
     const stream = await cp({
       src,
       dist: src,

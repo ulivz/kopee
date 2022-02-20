@@ -1,8 +1,8 @@
-import * as os from 'os';
-import { cp, TEMP } from '../src';
-import { src, dist } from './util';
+import * as os from "os";
+import { cp, TEMP } from "../src";
+import { src, dist } from "./util";
 
-it('write to temp dir', async () => {
+it("write to temp dir", async () => {
   const stream = await cp({
     src,
     dist: TEMP,
