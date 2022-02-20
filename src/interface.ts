@@ -3,13 +3,25 @@
  * Copyright (c) ULIVZ. All Rights Reserved.
  */
 
+import { Majo } from "majo";
+
 /**
- * Transform file.
+ * Transformer context.
+ */
+export interface TransformerContext {
+  readonly stream: Majo;
+  readonly options: ICopyOptions;
+  emitFile(file: string, content: string): void;
+}
+
+/**
+ * A type to describe the file transformer.
  */
 export type TransformerType = (
-  this: ICopyOptions,
+  this: TransformerContext,
   content: string,
-  filename: string
+  filename: string,
+  context: TransformerContext
 ) => string | Promise<string>;
 
 /**
