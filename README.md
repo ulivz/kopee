@@ -1,7 +1,9 @@
 <h1 align="center">kopee</h1>
 
 <p align="center">
-    `kopee` is **a high-level interface for succinct files coping**, with 100% test coverage as guarantee.
+
+`kopee` is **a high-level interface for succinct files coping**, with 100% test coverage as guarantee.
+
 </p>
 
 <p align="center">
