@@ -1,6 +1,6 @@
 {
   "name": "copy-it",
-  "version": "0.2.0",
+  "version": "0.0.1",
   "description": "A high-level interface for succinct files coping",
   "main": "lib/index.js",
   "files": [
