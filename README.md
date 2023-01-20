@@ -1,12 +1,12 @@
-# kopy
+# kopee
 
 ## Introduction
 
-`kopy` is **a high-level interface for succinct files coping**, with 100% test coverage as guarantee.
+`kopee` is **a high-level interface for succinct files coping**, with 100% test coverage as guarantee.
 
 ## Table of Contents
 
-- [kopy](#kopy)
+- [kopee](#kopee)
   - [Introduction](#introduction)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
@@ -39,7 +39,7 @@
 ## Install
 
 ```bash
-npm i kopy --save
+npm i kopee --save
 ```
 
 ## API
@@ -56,7 +56,7 @@ Source code of types：
 ## Usage
 
 ```bash
-const { cp } = require('kopy')
+const { cp } = require('kopee')
 ```
 
 ### Copy all files
@@ -121,7 +121,7 @@ cp({
   files: {
     "**": true,
     "package.json": {
-      override: '{ "name": "kopy" }',
+      override: '{ "name": "kopee" }',
     },
   },
 });
@@ -136,7 +136,7 @@ cp({
   files: {
     "**": true,
     // package.json will be replaced with new content.
-    "package.json": '{ "name": "kopy" }',
+    "package.json": '{ "name": "kopee" }',
   },
 });
 ```
@@ -260,7 +260,7 @@ cp({
 ### Write to symtem tmp
 
 ```js
-import { TEMP } from "kopy";
+import { TEMP } from "kopee";
 
 const stream = await cp({
   src: "/path/to/source/dir",
