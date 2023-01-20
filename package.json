@@ -1,5 +1,5 @@
 {
-  "name": "@nomadland/cp",
+  "name": "copy-it",
   "version": "0.2.0",
   "description": "A high-level interface for succinct files coping",
   "main": "lib/index.js",
@@ -9,6 +9,7 @@
     "!lib/*.map"
   ],
   "scripts": {
+    "bootstrap": "pnpm i --prefer-offline",
     "test": "jest",
     "cov": "jest --coverage",
     "lint": "eslint src/** __tests__ --ext .js,.jsx,.ts,.tsx --fix",

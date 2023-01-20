@@ -1,23 +1,29 @@
-# @nomadland/cp
+# copy-it
 
 ## Introduction
 
-`@nomadland/cp` is **a high-level interface for succinct files coping**, with 100% test coverage as guarantee.
+`copy-it` is **a high-level interface for succinct files coping**, with 100% test coverage as guarantee.
 
 ## Table of Contents
 
-- [Features](#features)
-- [Install](#install)
-- [API](#api)
-- [Usage](#usage)
-  - [Copy all files](#copy-all-files)
-  - [Copy partial files](#copy-partial-files)
-  - [Override files](#override-files)
-  - [Transform files](#transform-files)
-  - [Rename files](#rename-files)
-  - [Rename & transform files](#rename--transform-files)
-  - [Do not write to disk](#do-not-write-to-disk)
-- [Contributing](#contributing)
+- [copy-it](#copy-it)
+  - [Introduction](#introduction)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Install](#install)
+  - [API](#api)
+    - [`cp()`](#cp)
+  - [Usage](#usage)
+    - [Copy all files](#copy-all-files)
+    - [Copy partial files](#copy-partial-files)
+    - [Override files](#override-files)
+    - [Transform files.](#transform-files)
+    - [Rename files](#rename-files)
+    - [Rename \& transform files](#rename--transform-files)
+    - [Do not write to disk](#do-not-write-to-disk)
+    - [Write to symtem tmp](#write-to-symtem-tmp)
+  - [Contributing](#contributing)
+  - [License](#license)
 
 ## Features
 
@@ -33,7 +39,7 @@
 ## Install
 
 ```bash
-npm i @nomadland/cp --save
+npm i copy-it --save
 ```
 
 ## API
@@ -50,7 +56,7 @@ Source code of types：
 ## Usage
 
 ```bash
-const { cp } = require('@nomadland/cp')
+const { cp } = require('copy-it')
 ```
 
 ### Copy all files
@@ -115,7 +121,7 @@ cp({
   files: {
     "**": true,
     "package.json": {
-      override: '{ "name": "@nomadland/cp" }',
+      override: '{ "name": "copy-it" }',
     },
   },
 });
@@ -130,7 +136,7 @@ cp({
   files: {
     "**": true,
     // package.json will be replaced with new content.
-    "package.json": '{ "name": "@nomadland/cp" }',
+    "package.json": '{ "name": "copy-it" }',
   },
 });
 ```
@@ -254,7 +260,7 @@ cp({
 ### Write to symtem tmp
 
 ```js
-import { TEMP } from "@nomadland/cp";
+import { TEMP } from "copy-it";
 
 const stream = await cp({
   src: "/path/to/source/dir",
