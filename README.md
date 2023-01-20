@@ -1,12 +1,12 @@
-# copy-it
+# kopy
 
 ## Introduction
 
-`copy-it` is **a high-level interface for succinct files coping**, with 100% test coverage as guarantee.
+`kopy` is **a high-level interface for succinct files coping**, with 100% test coverage as guarantee.
 
 ## Table of Contents
 
-- [copy-it](#copy-it)
+- [kopy](#kopy)
   - [Introduction](#introduction)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
@@ -39,7 +39,7 @@
 ## Install
 
 ```bash
-npm i copy-it --save
+npm i kopy --save
 ```
 
 ## API
@@ -56,7 +56,7 @@ Source code of types：
 ## Usage
 
 ```bash
-const { cp } = require('copy-it')
+const { cp } = require('kopy')
 ```
 
 ### Copy all files
@@ -121,7 +121,7 @@ cp({
   files: {
     "**": true,
     "package.json": {
-      override: '{ "name": "copy-it" }',
+      override: '{ "name": "kopy" }',
     },
   },
 });
@@ -136,7 +136,7 @@ cp({
   files: {
     "**": true,
     // package.json will be replaced with new content.
-    "package.json": '{ "name": "copy-it" }',
+    "package.json": '{ "name": "kopy" }',
   },
 });
 ```
@@ -260,7 +260,7 @@ cp({
 ### Write to symtem tmp
 
 ```js
-import { TEMP } from "copy-it";
+import { TEMP } from "kopy";
 
 const stream = await cp({
   src: "/path/to/source/dir",
