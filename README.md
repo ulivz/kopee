@@ -1,29 +1,37 @@
-# kopee
+<h1 align="center">kopee</h1>
 
-## Introduction
+<p align="center">
+    `kopee` is **a high-level interface for succinct files coping**, with 100% test coverage as guarantee.
+</p>
 
-`kopee` is **a high-level interface for succinct files coping**, with 100% test coverage as guarantee.
+<p align="center">
+    <a href="https://npmjs.com/package/kopee"><img src="https://img.shields.io/npm/v/kopee.svg?style=flat" alt="NPM version"></a> 
+    <a href="https://npmjs.com/package/kopee"><img src="https://img.shields.io/npm/dm/kopee.svg?style=flat" alt="NPM downloads"></a> 
+    <a href="https://circleci.com/gh/saojs/kopee"><img src="https://img.shields.io/circleci/project/saojs/kopee/master.svg?style=flat" alt="Build Status"></a> 
+</p>
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [kopee](#kopee)
-  - [Introduction](#introduction)
-  - [Table of Contents](#table-of-contents)
-  - [Features](#features)
-  - [Install](#install)
-  - [API](#api)
-    - [`cp()`](#cp)
-  - [Usage](#usage)
-    - [Copy all files](#copy-all-files)
-    - [Copy partial files](#copy-partial-files)
-    - [Override files](#override-files)
-    - [Transform files.](#transform-files)
-    - [Rename files](#rename-files)
-    - [Rename \& transform files](#rename--transform-files)
-    - [Do not write to disk](#do-not-write-to-disk)
-    - [Write to symtem tmp](#write-to-symtem-tmp)
-  - [Contributing](#contributing)
-  - [License](#license)
+- [Table of Contents](#table-of-contents)
+- [Features](#features)
+- [Install](#install)
+- [API](#api)
+  - [`cp()`](#cp)
+- [Usage](#usage)
+  - [Copy all files](#copy-all-files)
+  - [Copy partial files](#copy-partial-files)
+  - [Override files](#override-files)
+  - [Transform files.](#transform-files)
+  - [Rename files](#rename-files)
+  - [Rename \& transform files](#rename--transform-files)
+  - [Do not write to disk](#do-not-write-to-disk)
+  - [Write to symtem tmp](#write-to-symtem-tmp)
+- [Contributing](#contributing)
+- [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Features
 
