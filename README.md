@@ -1,9 +1,7 @@
 <h1 align="center">kopee</h1>
 
 <p align="center">
-
-`kopee` is **a high-level interface for succinct files coping**, with 100% test coverage as guarantee.
-
+  <code>kopee</code> is <b>a high-level interface for succinct files coping</b>, with 100% test coverage as guarantee.
 </p>
 
 <p align="center">
@@ -14,6 +12,7 @@
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
